@@ -16,4 +16,6 @@
     <string name="calc_button_sub">-</string>
     <string name="calc_button_mul">x</string>
     <string name="calc_button_div">/</string>
+    <string name="calc_button_equal">=</string>
+
 </resources>
