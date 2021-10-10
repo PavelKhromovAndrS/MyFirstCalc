@@ -6,7 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@drawable/image">
-
+    <Button
+        android:id="@+id/remove_all"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_200"
+        android:textSize="16sp"
+        android:text="@string/calc_button_remove_all"
+        app:layout_constraintTop_toBottomOf="@id/calc_button_equal"
+        app:layout_constraintStart_toStartOf="@id/calc_button_equal"
+        app:layout_constraintEnd_toEndOf="@id/calc_button_equal"
+        />
+    <TextView
+        android:id="@+id/calc_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/remove_all"/>
     <Button
         android:id="@+id/calc_button_1"
         android:layout_width="wrap_content"
