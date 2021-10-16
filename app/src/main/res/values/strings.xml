@@ -18,5 +18,6 @@
     <string name="calc_button_div">/</string>
     <string name="calc_button_equal">=</string>
     <string name="calc_button_remove_all">Remove All</string>
+    <string name="calc_logo">CALCULATOR</string>
 
 </resources>

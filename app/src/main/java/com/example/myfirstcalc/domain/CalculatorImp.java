@@ -2,9 +2,8 @@ package com.example.myfirstcalc.domain;
 
 public class CalculatorImp implements Calculator {
 
-
     @Override
-    public Double doCalcOperations(Double value1, Double value2, Operations operations) {
+    public Double doCalcOperations(double value1, double value2, Operations operations) {
         if (operations == Operations.ADD) {
             return value1 + value2;
         }

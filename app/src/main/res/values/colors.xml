@@ -10,6 +10,7 @@
     <color name="green">#086972</color>
     <color name="blue">#071A52</color>
     <color name="green2">#A7FF83</color>
+    <color name="calc_background_color">#0C0C0C</color>
 
 
 </resources>

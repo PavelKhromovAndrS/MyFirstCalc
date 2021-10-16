@@ -6,14 +6,19 @@ import com.example.myfirstcalc.domain.Calculator;
 import com.example.myfirstcalc.domain.Operations;
 
 public class CalculatorPresenter extends AppCompatActivity {
-    Calculator calculator;
-    CalculatorView calculatorView;
-    Operations operation;
-    Double digit1 = 0.0;
-    Double digit2 = 0.0;
-    public static int BASE = 10;
-    Boolean isDotPressed = false;
-    int divider;
+    public static final int BASE = 10;
+
+    private final Calculator calculator;
+    private final CalculatorView calculatorView;
+
+    private Operations operation;
+
+    private Double digit1 = 0.0;
+    private Double digit2 = 0.0;
+
+    private Boolean isDotPressed = false;
+
+    private int divider;
 
     public CalculatorPresenter(Calculator calculator, CalculatorView calculatorView) {
         this.calculator = calculator;
@@ -92,12 +97,9 @@ public class CalculatorPresenter extends AppCompatActivity {
         if (longValue == doubleValue) {
             calculatorView.showResult(String.valueOf(longValue));
             return String.valueOf(longValue);
-        } else
+        } else {
             calculatorView.showResult(String.valueOf(doubleValue));
-        return String.valueOf(doubleValue);
-
+            return String.valueOf(doubleValue);
+        }
     }
-
-
-
 }

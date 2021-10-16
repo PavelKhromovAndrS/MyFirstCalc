@@ -2,4 +2,6 @@
 <resources>
     <dimen name="button_text_size">26sp</dimen>
     <dimen name="result_textview_size">40sp</dimen>
+    <dimen name="calc_button_margin">5dp</dimen>
+    <dimen name="calc_margin_logo">50dp</dimen>
 </resources>

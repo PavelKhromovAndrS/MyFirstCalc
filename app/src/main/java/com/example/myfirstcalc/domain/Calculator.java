@@ -1,5 +1,5 @@
 package com.example.myfirstcalc.domain;
 
 public interface Calculator {
-  Double doCalcOperations(Double value1, Double value2 , Operations operations);
+  Double doCalcOperations(double value1, double value2 , Operations operations);
 }
