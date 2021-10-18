@@ -1,32 +1,73 @@
 package com.example.myfirstcalc.ui;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myfirstcalc.R;
 import com.example.myfirstcalc.domain.CalculatorImp;
 import com.example.myfirstcalc.domain.Operations;
+import com.example.myfirstcalc.domain.Theme;
+import com.example.myfirstcalc.storage.ThemeStorage;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class CalculatorActivity extends AppCompatActivity implements CalculatorView {
 
+    private static final String ARG_THEME = "ARG_THEME";
+
     private TextView calcResult;
+
     private CalculatorPresenter calculatorPresenter;
+
+    private ThemeStorage storage;
+
+    private final ActivityResultLauncher<Intent> settingsLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+        @Override
+        public void onActivityResult(ActivityResult result) {
+            if (result.getResultCode() == Activity.RESULT_OK) {
+                if (result.getData() != null) {
+                    Theme theme = (Theme) result.getData().getSerializableExtra(ARG_THEME);
+                    storage.setTheme(theme);
+                    recreate();
+                }
+            }
+
+        }
+    });
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        storage = new ThemeStorage(this);
+        setTheme(storage.getTheme().getTheme());
         calculatorPresenter = new CalculatorPresenter(new CalculatorImp(), this);
+
         setContentView(R.layout.activity_calculator);
         calcResult = findViewById(R.id.calc_result);
+        Button settingsButton = findViewById(R.id.settings_button);
+
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CalculatorActivity.this, SettingsActivity.class);
+                settingsLauncher.launch(intent);
+            }
+        });
 
         Map<Integer, Integer> digits = new HashMap<>();
         digits.put(R.id.calc_button_0, 0);

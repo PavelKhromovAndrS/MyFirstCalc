@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/theme_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.SettingsActivity">
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Display1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/calc_button_margin"
+        android:text="@string/choose_your_theme"
+        android:textAlignment="center" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calc_button_theme"
+        style="@style/CalcButtonTheme1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/theme1" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calc_button_theme1"
+        style="@style/CalcButtonTheme2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/theme2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calc_button_theme2"
+        style="@style/CalcButtonTheme3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/theme3" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calc_button_theme3"
+        style="@style/CalcButtonTheme4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/theme4" />
+
+</LinearLayout>
