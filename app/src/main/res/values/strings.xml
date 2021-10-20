@@ -18,5 +18,12 @@
     <string name="calc_button_div">/</string>
     <string name="calc_button_equal">=</string>
     <string name="calc_button_remove_all">Remove All</string>
+    <string name="calc_logo">CALCULATOR</string>
+    <string name="settings">Settings</string>
+    <string name="theme1">Theme1</string>
+    <string name="theme2">Theme2</string>
+    <string name="theme3">Theme3</string>
+    <string name="theme4">Theme4</string>
+    <string name="choose_your_theme">Choose your Theme</string>
 
 </resources>
